@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+		crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+		integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" th:href="@{/css/index.css}" href="/css/index.css">
+
+
+	<style type="text/css">
+		img {
+			width: 100%;
+		}
+	</style>
+
+	<title></title>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">Navbar</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+				aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarColor01">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item">
+						<a class="nav-link active" th:href="@{/}">Home
+							<span class="visually-hidden">(current)</span>
+						</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#pistaTenis">Pistas de Tenis</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#pistaPadel">Pistas de Padel</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#pistaBaloncesto">Pistas de Baloncesto</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" th:href="@{/listaReservas}">Reservas</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<h1 class="text-center mt-5">Lista de Reservas de la Pista:</h1>
+	<div class="container col-md-12 col-12 p-0 mt-5">
+		<div class="row justify-content-center">
+			<div class="col-11 col-md-8 table-responsive">
+				<table class="table table-hover table-dark table-striped">
+					<thead>
+						<tr>
+							<th scope="col">id</th>
+							<th scope="col">Nombre</th>
+							<th scope="col">Apellidos</th>
+							<th scope="col">Fecha Reserva</th>
+							<th scope="col">Tipo de Pista</th>
+							<th scope="col">Precio Pista</th>
+							<th scope="col">Editar</th>
+							<th scope="col">Borrar</th>
+
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="reserva : ${reservasPista}">
+							<td th:text="${reserva.id}"></td>
+							<td th:text="${reserva.nombreCliente}">Luismi</td>
+							<td th:text="${reserva.apellidosCliente}">De Triana</td>
+							<td th:text="${#temporals.format(reserva.fechaReserva)}">1º DAM</td>
+                <td th:text="${reserva.Pista.tipo}">1º DAM</td>
+                <td th:text="${reserva.Pista.precio}">1º DAM</td>
+                <td class="operaciones"><a href="#"
+                    th:href="@{/editar/{id}(id=${reserva.id})}"
+                    class="btn btn-primary">Editar</a></td>
+                <td class="operaciones"><a th:href="@{/borrar/{id}(id=${reserva.id})}"
+                class="btn btn-danger" >Borrar</a></td>
+				
+                    
+              </tr>
+            </tbody>
+          </table>
+    
+        </div>
+      </div>
+    </div>
+    
+      
+
+</body>
+</html>
