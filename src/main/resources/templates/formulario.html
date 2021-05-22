@@ -69,11 +69,11 @@
 		</div>
 	</nav>
 
-	<div class="container">
+	<div class="container col-12 ml-5 mt-5">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-12 ">
 				<div class="well well-sm">
-					<form id="formulario" class="formulario" method="POST" th:action="addReserva"
+					<form id="formulario" class="col-12 col-md-9 ml-5" method="POST" th:action="addReserva"
 						th:object="${reserva}">
 						<fieldset>
 
@@ -108,7 +108,7 @@
 								<label for="fecha">Fecha Reserva</label>
 								<div>
 									<input required type="datetime-local" name="fechaReserva" id="fechaReserva"
-										th:field="*{fechaReserva}">
+										th:field="*{fechaReserva}" min="2021-05-23T00:00" max="2021-06-12T12:00">
 
 								</div>
 
@@ -129,8 +129,7 @@
 
 							</select>
 
-				</div>
-			</div>
+				
 			<div class="formulario__grupo" id="grupo__terminos">
 				<label class="formulario__label">
 					<input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
@@ -152,8 +151,11 @@
 			</form>
 		</div>
 	</div>
+		</div>
 	</div>
-	</div>
+	
+	
+	
 
 
 	<script type="text/javascript" th:src="@{/javascript/validacion.js}"></script>

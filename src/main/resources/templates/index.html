@@ -27,6 +27,9 @@
 		img {
 			width: 100%;
 		}
+		#contenedor{
+			background-image:url("https://i1.wp.com/cornejorovaletti.com/wp-content/uploads/2017/10/textura-fondo-gris.jpg")
+		}
 	</style>
 
 	<title></title>
@@ -69,8 +72,8 @@
 
 
 
-
-	<h3 id="pistaTenis">Pistas de Tenis</h3>
+	<div id="contenedor" class="d-flex col-12  mx-0 my-0 row ">
+	<h3 class="mt-5" id="pistaTenis">Pistas de Tenis</h3>
 	<div class="d-flex col-12 px-5 row mb-5">
 		<div class="card col-md-4 col-12 px-3 py-3 mt-5" th:each="pista : ${pistasTenis}">
 
@@ -88,7 +91,7 @@
 		</div>
 	</div>
 
-	<h3 id="pistaPadel">Pistas de Padel</h3>
+	<h3 class="mt-5" id="pistaPadel">Pistas de Padel</h3>
 	<div class="d-flex col-12 px-5 row mb-5">
 		<div class="card col-md-4 col-12 px-3 py-3 mt-5" th:each="pista : ${pistasPadel}">
 
@@ -100,12 +103,13 @@
 				<h5 class="card-title">Número de Pista: <span th:text="${pista.numeroPista}"> </span></h5>
 				<p class="card-text">Precio: <span th:text="${pista.precio}"></span></p>
 				<a th:href="@{/add/{id}(id=${pista.id})}" class="btn btn-primary">Reservar</a>
+				<a th:href="@{/detalles/{id}(id=${pista.id})}" class="btn btn-primary">Ver detalles</a>
 			</div>
 
 		</div>
 	</div>
 
-	<h3 id="pistaBaloncesto">Pistas de Baloncesto</h3>
+	<h3 class="mt-5" id="pistaBaloncesto">Pistas de Baloncesto</h3>
 	<div class="d-flex col-12 px-5 row mb-5">
 		<div class="card col-md-4 col-12 px-3 py-3 mt-5" th:each="pista : ${pistasBaloncesto}">
 
@@ -117,11 +121,12 @@
 				<h5 class="card-title">Número de Pista: <span th:text="${pista.numeroPista}"> </span></h5>
 				<p class="card-text">Precio: <span th:text="${pista.precio}"></span></p>
 				<a th:href="@{/add/{id}(id=${pista.id})}" class="btn btn-primary">Reservar</a>
+				<a th:href="@{/detalles/{id}(id=${pista.id})}" class="btn btn-primary">Ver detalles</a>
 			</div>
 
 		</div>
 	</div>
-
+	</div>
 	<footer class="bg-primary text-center text-white">
 		<div class="container p-4">
 			<section class="mb-4">

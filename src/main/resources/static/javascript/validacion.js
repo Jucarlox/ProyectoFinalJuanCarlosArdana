@@ -73,12 +73,19 @@ function validar (evento){
    
     let nombreCliente = document.getElementById('nombreCliente').value;
     if (!nombreCliente.match(/^[a-zA-ZÀ-ÿ\s]{1,40}$/) ) {
-      alert('No has escrito bien el nombre');
+      document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
       return;
     }
     let apellidosCliente = document.getElementById('apellidosCliente').value;
     if (!apellidosCliente.match(/^[a-zA-ZÀ-ÿ\s]{1,40}$/) ) {
-      alert('No has escrito bien el nombre');
+      document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+      return;
+    }
+    
+    
+    let terminos = document.getElementById('terminos');
+    if (!terminos.checked) {
+      document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
       return;
     }
     
