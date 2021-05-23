@@ -88,8 +88,8 @@
 										id="nombreCliente" th:field="*{nombreCliente}">
 									<i class="formulario__validacion-estado fas fa-times-circle"></i>
 								</div>
-								<p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo
-									puede contener numeros, letras y guion bajo.</p>
+								<p class="formulario__input-error">El nombre tiene que tener menos de 100 caracteres y solo
+									puede tener letras .</p>
 							</div>
 
 
@@ -100,8 +100,8 @@
 										id="apellidosCliente" th:field="*{apellidosCliente}">
 									<i class="formulario__validacion-estado fas fa-times-circle"></i>
 								</div>
-								<p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo
-									puede contener numeros, letras y guion bajo.</p>
+								<p class="formulario__input-error">Los apellidos tienen que tener menos de 100 caracteres y solo
+									puede tener letras .</p>
 							</div>
 
 							<div>
@@ -129,33 +129,33 @@
 
 							</select>
 
-				
-			<div class="formulario__grupo" id="grupo__terminos">
-				<label class="formulario__label">
-					<input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
-					Acepto los Terminos y Condiciones
-				</label>
+
+							<div class="formulario__grupo" id="grupo__terminos">
+								<label class="formulario__label">
+									<input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+									Acepto los Terminos y Condiciones
+								</label>
+							</div>
+
+							<div class="formulario__mensaje" id="formulario__mensaje">
+								<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el
+									formulario correctamente. </p>
+							</div>
+
+							<div class="formulario__grupo formulario__grupo-btn-enviar">
+								<button type="submit" class="formulario__btn">Enviar</button>
+
+							</div>
+
+						</fieldset>
+					</form>
+				</div>
 			</div>
-
-			<div class="formulario__mensaje" id="formulario__mensaje">
-				<p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el
-					formulario correctamente. </p>
-			</div>
-
-			<div class="formulario__grupo formulario__grupo-btn-enviar">
-				<button type="submit" class="formulario__btn">Enviar</button>
-
-			</div>
-
-			</fieldset>
-			</form>
 		</div>
 	</div>
-		</div>
-	</div>
-	
-	
-	
+
+
+
 
 
 	<script type="text/javascript" th:src="@{/javascript/validacion.js}"></script>

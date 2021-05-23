@@ -18,28 +18,46 @@ import com.salesianostriana.dam.service.ReservaServicio;
 
 import lombok.RequiredArgsConstructor;
 
+/**
+ * Clase PistaController
+ *
+ * Esta clase se encarga de pintar listas de Pistas en la
+ * pagina web
+ *
+ * @author Juan Carlos
+ * @version 1
+ * @see <a href = "https://triana.salesianos.edu/" /> triana.salesianos.edu – Triana Salesianos </a>
+ */
+
 @Controller
 @RequiredArgsConstructor
 public class PistaController {
-
+	
 	private final PistaServicio pistaservice;
 	private final ReservaServicio reservaservice;
 	
 	
+	/**
+	 * Controlador que pinta listas de Pistas segun el tipo
+	 * 
+	 * @param model El model se encarga de enviar las listas de Pistas a la pagina web
+	 * @return devuelte la plantilla index con los datos de las Pistas cargados
+	 */
+	
 	@GetMapping("/")
-	public String index(Model model, 
-			@RequestParam("q") Optional<String> consulta) {
+	public String index(Model model/*, 
+			@RequestParam("q") Optional<String> consulta*/) {
 		
-		List<Pista> pistas;
+		/*List<Pista> pistas;
 
-		if (consulta.isEmpty()) {
+		if (consulta.isEmpty()) {*/
 			model.addAttribute("pistasTenis", pistaservice.pistasTipo("Tenis".toLowerCase()));
 			model.addAttribute("pistasBaloncesto", pistaservice.pistasTipo("baloncesto".toLowerCase()));
 			model.addAttribute("pistasPadel", pistaservice.pistasTipo("padel".toLowerCase()));
-		} else {
+		/*} else {
 			pistas = pistaservice.pistasTipo(consulta.get());
 			model.addAttribute("pistas", pistas);
-		}
+		}*/
 		
 		
 		
@@ -61,7 +79,7 @@ public class PistaController {
 		
 		
 		return "listasPista";
-	}*/
+	}
 	
 	@GetMapping("/new")
 	public String muestraFormulario(Model model) {
@@ -76,5 +94,5 @@ public class PistaController {
 		pistaservice.save(pista);
 		  
 		return "redirect:/";
-	}
+	}*/
 }

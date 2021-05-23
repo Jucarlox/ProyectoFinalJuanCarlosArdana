@@ -6,8 +6,9 @@ public interface IBaseService<T, ID> {
 
 	/**
 	 * Almacenamos una nueva entidad a través del repositorio
+	 * 
 	 * @param t
-	 * @return 
+	 * @return
 	 */
 	T save(T t);
 
@@ -18,16 +19,17 @@ public interface IBaseService<T, ID> {
 	 * @return
 	 */
 	T findById(ID id);
-	
-	
+
 	/**
 	 * Obtenemos todas las entidades de un tipo de entidad
+	 * 
 	 * @return
 	 */
 	List<T> findAll();
 
 	/**
 	 * Editamos una instancia de una entidad (si no tiene Id, la insertamos).
+	 * 
 	 * @param t
 	 * @return
 	 */
@@ -35,17 +37,16 @@ public interface IBaseService<T, ID> {
 
 	/**
 	 * Eliminamos una instancia de una entidad
+	 * 
 	 * @param t
 	 */
 	void delete(T t);
 
 	/**
 	 * Eliminamos una instancia en base a su ID
+	 * 
 	 * @param id
 	 */
 	void deleteById(ID id);
-	
-	
-	
 
 }
